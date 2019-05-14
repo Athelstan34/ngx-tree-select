@@ -8,7 +8,7 @@
       <span *ngFor="let itm of selection; let idx=index">
         <span *ngIf="moreLoaded || maxVisibleItemCount == 0 || idx<maxVisibleItemCount" class="pull-left" [class.selected-item-text]="!multiple"
           [class.selected-item-item]="multiple" [class.btn]="multiple" [class.btn-default]="multiple" [class.btn-xs]="multiple">
-          {{itm.text}}
+          {{itm.uiText}}
           <a *ngIf="multiple && !disabled" class="close" (click)="removeItem($event, itm)">x</a>
         </span>
       </span>

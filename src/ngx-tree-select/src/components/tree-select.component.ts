@@ -58,6 +58,11 @@ export class TreeSelectComponent implements ControlValueAccessor {
   }
 
   @Input()
+  public set selectedTextField(value: string) {
+    this.svc.setConfiguration((opt) => opt.uiTextProperty = value, true);
+  }
+
+  @Input()
   public set allowParentSelection(value: boolean) {
     this.svc.setConfiguration((opt) => opt.allowParentSelection = value, true);
   }
@@ -166,6 +171,7 @@ export class TreeSelectComponent implements ControlValueAccessor {
     this.filterPlaceholder = (defaultOpts.filterPlaceholder || 'Type here for filtering items...');
     this.idField = (defaultOpts.idField || 'id');
     this.textField = (defaultOpts.textField || 'id');
+    this.selectedTextField = (defaultOpts.selectedTextField || '');
     this.childrenField = (defaultOpts.childrenField || '');
     this.expandMode = (defaultOpts.expandMode || ExpandMode.None);
   }

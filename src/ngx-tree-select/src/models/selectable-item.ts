@@ -7,7 +7,7 @@ export class SelectableItem {
   public matchFilter = true;
   public isVisible = false;
 
-  constructor(public id: string, public text: string, public data: any, public svc: SelectService) {
+  constructor(public id: string, public text: string, public uiText: string, public data: any, public svc: SelectService) {
   }
 
   get hasChild(): boolean {

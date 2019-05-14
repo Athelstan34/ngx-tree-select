@@ -6,7 +6,7 @@
     <div class="panel-heading">Simple select</div>
     <div class="panel-body">
       <form novalidate>
-        <tree-select name="simpleSelect" [items]="items" childrenField="children" [(ngModel)]="simpleSelected" required=true #simpleSelect="ngModel"
+        <tree-select name="simpleSelect" [items]="items" childrenField="children" selectedTextField="name" [(ngModel)]="simpleSelected"  required=true #simpleSelect="ngModel"
           [filterPlaceholder]="FilterPlaceholder" [allowFilter]="ShowFilter" [disabled]="Disabled"></tree-select>
         <div *ngIf="simpleSelect.errors && (simpleSelect.dirty || simpleSelect.touched)" class="alert alert-danger">
           <div [hidden]="!simpleSelect.errors.required">Simple select is required</div>
@@ -21,7 +21,7 @@
     <div class="panel-heading">Multiple select</div>
     <div class="panel-body">
       <form novalidate>
-        <tree-select name="multipleSelect" [items]="items" childrenField="children" [multiple]="true" [(ngModel)]="multipleSelected"
+        <tree-select name="multipleSelect" [items]="items" childrenField="children" selectedTextField="name" [multiple]="true" [(ngModel)]="multipleSelected"
           filterPlaceholder="Type item filter..." required=true minlength="2" maxlength="4"
           #multipleSelect="ngModel" [filterPlaceholder]="FilterPlaceholder" [maxVisibleItemCount]="MaxDisplayed" [allowFilter]="ShowFilter"
           [disabled]="Disabled">

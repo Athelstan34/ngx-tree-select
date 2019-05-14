@@ -3,6 +3,7 @@ import { ExpandMode } from './expand-mode';
 export class SelectOption {
   public idProperty = 'id';
   public textProperty = 'text';
+  public uiTextProperty = 'uiText';
   public childProperty: string = null;
   public allowMultiple = false;
   public closeOnSelection = true;

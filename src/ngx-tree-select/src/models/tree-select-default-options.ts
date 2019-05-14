@@ -9,6 +9,7 @@ export class TreeSelectDefaultOptions {
   public allowParentSelection?: boolean;
   public idField?: string;
   public textField?: string;
+  public selectedTextField?: string;
   public childrenField?: string;
   public filterCaseSensitive?: boolean;
   public expandMode = ExpandMode.None;

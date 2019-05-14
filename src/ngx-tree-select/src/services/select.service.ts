@@ -1,14 +1,24 @@
-import { Subject } from 'rxjs/Subject';
-import { SelectableItem } from '../models/selectable-item';
-import { SelectOption } from '../models/select-option';
-import { Injectable } from '@angular/core';
-import { ExpandMode } from '../models/expand-mode';
+import {
+  Subject
+} from 'rxjs/Subject';
+import {
+  SelectableItem
+} from '../models/selectable-item';
+import {
+  SelectOption
+} from '../models/select-option';
+import {
+  Injectable
+} from '@angular/core';
+import {
+  ExpandMode
+} from '../models/expand-mode';
 
 export type OptionDelegate = (options: SelectOption) => void;
 
 @Injectable()
 export class SelectService {
-  public modelChanged$: Subject<any> = new Subject<any>();
+  public modelChanged$: Subject < any > = new Subject < any > ();
 
   private _items: SelectableItem[];
   private _options: SelectOption = new SelectOption();
@@ -166,11 +176,12 @@ export class SelectService {
       return sources.map((srcItem) => {
         let item: SelectableItem;
         if (srcItem[this._options.idProperty] &&
-            srcItem[this._options.idProperty] !== '' &&
-            srcItem[this._options.textProperty]) {
+          srcItem[this._options.idProperty] !== '' &&
+          srcItem[this._options.textProperty]) {
           item = new SelectableItem(
             (srcItem[this._options.idProperty] || '').toString(),
             srcItem[this._options.textProperty] as string,
+            srcItem[this._options.uiTextProperty] as string,
             srcItem,
             this
           );
@@ -178,6 +189,7 @@ export class SelectService {
           item = new SelectableItem(
             i.toString(),
             srcItem as string,
+            srcItem,
             srcItem,
             this
           );
